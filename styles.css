@@ -4,81 +4,170 @@
 
 body,
 html {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   min-height: 100vh; /* Mindesthöhe des Seiteninhalts, um den Footer zu schieben */
   position: relative; /* Relativer Positionierungs-Kontext für den Footer */
 }
-.container {
-  display: flex;
-  flex-direction: column;
-}
-header {
-  background-color: deepskyblue;
-  color: aliceblue;
-}
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: deepskyblue;
+    color: aliceblue;
+  }
 
-/* nav */
+  /* nav */
+  .resortname {
+    display: flex;
+    flex-direction: column;
+  }
+  .topnav {
+    padding: 5px 0 5px 15px;
+  }
+  .topnav .headline {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Parisienne', cursive;
+  }
+  .topnav .headline2 {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Parisienne', cursive;
+    margin: 0;
+  }
+  .fa {
+    color: #ffffff;
+  }
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    font-size: 1.2em;
+    display: block;
+    position: absolute;
+    right: 5%;
+    top: 1%;
+    z-index: 100;
+  }
 
-.topnav {
-  display: flex;
-  justify-content: space-around;
-  overflow: hidden;
-  background-color: deepskyblue;
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .appartment_name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 400;
+  }
+
+  .topnav {
+    display: flex;
+    overflow: hidden;
+    background-color: deepskyblue;
+  }
+
+  .topnav a:hover {
+    background-color: deepskyblue;
+    color: white;
+  }
+
+  .topnav a.active {
+    background-color: deepskyblue;
+    color: white;
+  }
+
+  .topnav .icon {
+    display: none;
+  }
+  .myForm {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+  }
+  .dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 5%;
+  }
+  .people {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
+  }
+  #children,
+  #adults {
+    width: 25%;
+  }
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 2% 0 2% 0;
+  }
+  .welcome {
+    padding: 5px 15px 5px 15px;
+    font-size: 0.9em;
+  }
+  #toggleButton {
+    align-items: center;
+    background-image: linear-gradient(134deg, #5b42f3, #00ddeb 35%, #5b42f3);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 0.6em;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 50px;
+    padding: 9px 12px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .button-63:active,
+  .button-63:hover {
+    outline: 0;
+  }
+
+  @media (min-width: 768px) {
+    .button-63 {
+      font-size: 24px;
+      min-width: 196px;
+    }
+  }
 }
-
-.topnav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: deepskyblue;
-  color: white;
-}
-
-.topnav a.active {
-  background-color: deepskyblue;
-  color: white;
-}
-
-.topnav .icon {
+#hiddenText {
   display: none;
 }
-.myForm {
-  display: flex;
-  flex-direction: column;
-  padding-left: 5%;
-}
-.dates {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding-bottom: 5%;
-}
-.people {
-  display: flex;
-  flex-direction: row;
-  padding-bottom: 2%;
-}
-#children,
-#adults {
-  width: 25%;
-}
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 2% 0 2% 0;
-}
-.welcome {
-  padding: 2% 5% 2% 5%;
-}
+
 .line {
   align-items: center;
   background-color: deepskyblue;
@@ -163,47 +252,6 @@ img.hover-shadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 } */
 
-@media only screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {
-    display: none;
-  }
-  .topnav a.icon {
-    font-size: 1.3em;
-    display: block;
-    position: absolute;
-    right: 2%;
-    top: 0.5%;
-  }
-
-  .topnav.responsive {
-    position: relative;
-  }
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 15px;
-    top: 15px;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-  .appartment_name {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    font-weight: 400;
-  }
-  .welcome {
-    padding: 20px;
-    border: 1px solid #ddd;
-    margin: 20px;
-  }
-
-  #hiddenText {
-    display: none;
-  }
-}
-
 /* .topnav .standard {
   padding-top: 2%; 
   font-size: 1em;
@@ -211,12 +259,3 @@ img.hover-shadow {
   color: #ffffff;
   font-family: 'Rajdhani', sans-serif;
 } */
-
-.topnav .headline {
-  padding: 15px 15px 15px 15px; /* Update padding values */
-  font-size: 1.6em;
-  font-weight: bold;
-  text-decoration: none;
-  color: #ffffff;
-  font-family: 'Parisienne', cursive;
-}
