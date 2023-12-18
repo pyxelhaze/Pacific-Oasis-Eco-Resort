@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="appartments.css" />
+    <script
+      src="https://kit.fontawesome.com/0aa3124d43.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="topnav" id="myTopnav">
+          <div class="resortname">
+            <a href="index.html" class="headline">AquaVista </a>
+            <p class="headline2">Ocean Eco-Resort</p>
+          </div>
+          <a
+            href="javascript:void(0);"
+            class="icon standard"
+            onclick="toggleForm()"
+          >
+            <i class="fa fa-bars"></i>
+          </a>
+        </nav>
+
+        <form action="/action_page.php" class="myForm" style="display: none">
+          <div class="dates">
+            <div class="date1">
+              <label for="arrivalDate">Anreise:</label>
+              <input type="text" id="arrivalDate" name="arrivalDate" />
+            </div>
+            <div class="date2">
+              <label for="departureDate">Abreise:</label>
+              <input type="text" id="departureDate" name="departureDate" />
+            </div>
+          </div>
+          <div class="people">
+            <div class="adults">
+              <label for="adults">Erwachsene:</label>
+              <div class="input-group">
+                <span class="minus">-</span>
+                <input
+                  type="text"
+                  id="adults"
+                  name="adults"
+                  value="0"
+                  readonly
+                />
+                <span class="plus">+</span>
+              </div>
+            </div>
+            <div class="children">
+              <label for="children">Kinder:</label>
+              <div class="input-group">
+                <span class="minus">-</span>
+                <input
+                  type="text"
+                  id="children"
+                  name="children"
+                  value="0"
+                  readonly
+                />
+                <span class="plus">+</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </header>
+      <main>
+        <div class="apartment1 apartment_box">
+          <div class="description">
+            Bedrooms:3 <br /><br />
+            Price: 240 € / Night<br /><br />
+            <div class="ratings">
+              Rated by our guests
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            </div>
+            <div class="appartment_name">Tidepool Terrace <br /><br /></div>
+            <div class="apartment_img">
+              <img src="images/houses/1.jpg" alt="Bild 1" />
+              <img src="images/inside/appartment1/1.png" alt="inside1" />
+              <img src="images/inside/appartment1/2.png" alt="inside2" />
+              <img src="images/inside/appartment1/3.png" alt="inside3" />
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

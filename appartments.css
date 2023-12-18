@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Mindesthöhe des Seiteninhalts, um den Footer zu schieben */
+  position: relative; /* Relativer Positionierungs-Kontext für den Footer */
+}
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    background-color: deepskyblue;
+    color: aliceblue;
+  }
+
+  /* nav */
+  .resortname {
+    display: flex;
+    flex-direction: column;
+  }
+  .topnav {
+    padding: 5px 0 5px 15px;
+    display: flex;
+    overflow: hidden;
+    background-color: deepskyblue;
+  }
+  .topnav .headline {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Parisienne', cursive;
+  }
+  .topnav .headline2 {
+    font-size: 0.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Parisienne', cursive;
+    margin: 0;
+  }
+  .fa-bars {
+    color: #ffffff;
+  }
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    font-size: 1.2em;
+    display: block;
+    position: absolute;
+    right: 7%;
+    top: 1.5%;
+    z-index: 1000;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .topnav a:hover {
+    background-color: deepskyblue;
+    color: white;
+  }
+
+  .topnav a.active {
+    background-color: deepskyblue;
+    color: white;
+  }
+
+  .topnav .icon {
+    display: none;
+  }
+  .myForm {
+    display: flex;
+    flex-direction: column;
+    padding-left: 5%;
+  }
+  .dates {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-bottom: 5%;
+  }
+  .people {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 2%;
+  }
+  #children,
+  #adults {
+    width: 25%;
+  }
+  .apartment_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .apartment_img {
+    max-width: 60%;
+  }
+  .apartment_img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+}
