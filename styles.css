@@ -154,10 +154,13 @@ html {
       min-width: 196px;
     }
   }
-  .appartment_name {
+  .apartment_name,
+  .apartment_name:visited {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     font-weight: 400;
+    text-decoration: none;
+    color: black;
   }
   #hiddenText {
     display: none;
@@ -217,7 +220,7 @@ html {
     height: auto;
     border-radius: 5px;
   }
-  .appartment_name {
+  .apartment_name {
     font-weight: 500;
   }
   .description {
