@@ -11,14 +11,14 @@ const toggleForm = () => {
     }
 };
 
-//datepicker
+/* //datepicker
 $(() => {
     $("#arrivalDate").datepicker();
     $("#departureDate").datepicker();
-});
+}); */
 
 
-//peoplecounter
+// peoplecounter
 document.querySelectorAll(".plus").forEach(function (button) {
     button.addEventListener("click", function () {
         var input = this.parentNode.querySelector("input");
@@ -29,11 +29,18 @@ document.querySelectorAll(".plus").forEach(function (button) {
 document.querySelectorAll(".minus").forEach(function (button) {
     button.addEventListener("click", function () {
         var input = this.parentNode.querySelector("input");
-        if (parseInt(input.value) > 0) {
-            input.value = parseInt(input.value) - 1;
+        if (input.id === "adults") {
+            if (parseInt(input.value) > 1) { // Ensure adults value doesn't go below 1
+                input.value = parseInt(input.value) - 1;
+            }
+        } else {
+            if (parseInt(input.value) > 0) {
+                input.value = parseInt(input.value) - 1;
+            }
         }
     });
 });
+
 
 
 //Slideshow
@@ -101,5 +108,92 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+//modale
+
+const openModalButtons = document.querySelectorAll('[data-modal-target]')
+const closeModalButtons = document.querySelectorAll('[data-close-button]')
+const overlay = document.getElementById('overlay')
+
+openModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = document.querySelector(button.dataset.modalTarget)
+        openModal(modal)
+    })
+})
+
+overlay.addEventListener('click', () => {
+    const modals = document.querySelectorAll('.modal.active')
+    modals.forEach(modal => {
+        closeModal(modal)
+    })
+})
+
+closeModalButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.modal')
+        closeModal(modal)
+    })
+})
+// attach event listeners to the login and register buttons
+$('#login-button').on('click', function (event) {
+    event.preventDefault();
+    closeModal(document.querySelector('#modal-invalid'));
+    openModal(document.querySelector('#modal-login'));
+});
+
+$('#register-button').on('click', function (event) {
+    event.preventDefault();
+    closeModal(document.querySelector('#modal-invalid'));
+    openModal(document.querySelector('#modal-register'));
+});
 
 
+
+function openModal(modal) {
+    if (modal == null) return
+    modal.classList.add('active')
+    overlay.classList.add('active')
+}
+
+function closeModal(modal) {
+    if (modal == null) return
+    modal.classList.remove('active')
+    overlay.classList.remove('active')
+}
+
+
+
+
+
+
+/* //formular und schaltflächenlogik
+function toggleForm() {
+    var form = document.querySelector('.myForm');
+    if (form.style.display === "none") {
+        form.style.display = "block";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+$(document).ready(function () {
+    $("#arrivalDate").datepicker();
+    $("#departureDate").datepicker();
+
+    $(".plus").click(function () {
+        var input = $(this).siblings("input");
+        input.val(parseInt(input.val()) + 1);
+    });
+
+    $(".minus").click(function () {
+        var input = $(this).siblings("input");
+        if (parseInt(input.val()) > 0) {
+            input.val(parseInt(input.val()) - 1);
+        }
+    });
+
+    $("#toggleButton").click(function () {
+        $("#hiddenText").toggle();
+    });
+});
+ */
