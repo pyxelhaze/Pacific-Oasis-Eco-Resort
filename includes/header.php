@@ -2,14 +2,14 @@
     <nav class="topnav" id="myTopnav">
         <div class="headblock">
             <div class="resortname">
-                <a href="index.php" class="headline">AquaVista</a>
+                <a href="..public/index.php" class="headline">AquaVista</a>
                 <p class="headline2">Ocean Eco-Resort</p>
             </div>
 
             <div class="register_buttons">
                 <?php if ($is_logged_in) : ?>
                 <button class="greeting">Hello <?php echo htmlspecialchars($_SESSION['username']); ?></button>
-                <button class="logout"> <a href="logout.php">Logout</a></button>
+                <button class="logout"> <a href="../auth/logout.php">Logout</a></button>
                 <?php else : ?>
                 <button class="register"><a href="#" data-modal-target="#modal-register">Register</a></button>
                 <button class="login"><a href="#" data-modal-target="#modal-login">Login</a></button>
@@ -21,7 +21,7 @@
         </a>
     </nav>
 
-    <form id="bookingForm" class="myForm" method="POST" action="booking.php" style="display: none">
+    <form id="bookingForm" class="myForm" method="POST" action="../booking/booking.php" style="display: none">
         <div class="booking_details">
             <div class="dates">
                 <div class="date1">

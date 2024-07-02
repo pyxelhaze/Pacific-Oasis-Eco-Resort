@@ -27,5 +27,5 @@ if (isset($_SESSION['user_id'])) {
 
 // Sitzung beenden und zur Startseite weiterleiten
 session_destroy();
-header("Location: index.php");
+header("Location: ../public/index.php");
 exit();

@@ -1,5 +1,8 @@
 <?php
 session_start();
+require dirname(__DIR__) . '/db.php';
+
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = isset($_POST['username']) ? $_POST['username'] : '';
@@ -41,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt->execute();
 
             // Nach erfolgreichem Login zur index.php weiterleiten
-            header('Location: index.php');
+            header('Location: ../public/index.php');
             exit();
         } else {
             $_SESSION['invalid'] = true;
@@ -54,6 +57,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 
     // important to get back to index.php
-    header('Location: index.php');
+    header('Location: ../public/index.php');
     exit();
 }

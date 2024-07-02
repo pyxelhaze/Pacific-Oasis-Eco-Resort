@@ -1,10 +1,10 @@
 <?php
 session_start();
-include 'db.php';
+require dirname(__DIR__) . '/db.php';
 
 if (!isset($_SESSION['username'])) {
     $_SESSION['booking_error'] = 'Bitte loggen Sie sich ein, um eine Buchung vorzunehmen.';
-    header("Location: index.php");
+    header("Location: ../public/index.php");
     exit;
 }
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // compare arrival date with current date
     if ($arrival_date < $current_date) {
         $_SESSION['booking-time'] = 'Das Anreisedatum darf nicht in der Vergangenheit liegen.';
-        header("Location: index.php");
+        header("Location: ../public/index.php");
         exit;
     }
 
@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($overlapping_count > 0) {
         $_SESSION['booking-overlap'] = true;
-        header("Location: index.php");
+        header("Location: ../public/index.php");
         exit;
     }
 
@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->execute()) {
         echo "Booking successful!";
-        header("Location: booking_success.php");
+        header("Location: ../booking/booking_success.php");
         exit;
     } else {
         echo "Error: " . $stmt->error;

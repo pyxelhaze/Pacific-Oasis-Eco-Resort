@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         // Nach erfolgreicher Registrierung zur index.php weiterleiten
-        header('Location: index.php');
+        header('Location: ../public/index.php');
         exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

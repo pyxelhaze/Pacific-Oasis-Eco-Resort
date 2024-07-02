@@ -1,6 +1,6 @@
 <?php
-include 'register.php';
-include 'login.php';
+include '../auth/register.php';
+include '../auth/login.php';
 $is_logged_in = isset($_SESSION['username']);
 ?>
 
@@ -24,7 +24,7 @@ $is_logged_in = isset($_SESSION['username']);
 
 <body>
     <div class="container">
-        <?php include 'header.php'; ?>
+        <?php include '../includes/header.php'; ?>
         <main>
     </div>
 
@@ -68,35 +68,35 @@ $is_logged_in = isset($_SESSION['username']);
     <div class="slideshow-container">
         <div class="arrows"></div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/1.jpg" alt="Bild 1" />
+            <img src="../images/houses/1.jpg" alt="Bild 1" />
         </div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/2.jpg" alt="Bild 2" />
+            <img src="../images/houses/2.jpg" alt="Bild 2" />
         </div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/3.jpg" alt="Bild 3" />
+            <img src="../images/houses/3.jpg" alt="Bild 3" />
         </div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/4.jpg" alt="Bild 4" />
+            <img src="../images/houses/4.jpg" alt="Bild 4" />
         </div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/5.jpg" alt="Bild 5" />
+            <img src="../images/houses/5.jpg" alt="Bild 5" />
         </div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/6.jpg" alt="Bild 6" />
+            <img src="../images/houses/6.jpg" alt="Bild 6" />
         </div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/7.jpg" alt="Bild 7" />
+            <img src="../images/houses/7.jpg" alt="Bild 7" />
         </div>
         <div class="slideshow-slide fade">
-            <img src="images/houses/8.jpg" alt="Bild 8" />
+            <img src="../images/houses/8.jpg" alt="Bild 8" />
         </div>
     </div>
 
     <div class="line"></div>
 
     <div class="apartments_details">
-        <?php include 'apartment_details.php'; ?>
+        <?php include '../includes/apartment_details.php'; ?>
     </div>
     </main>
     </div>
@@ -110,7 +110,7 @@ $is_logged_in = isset($_SESSION['username']);
             </div>
             <div class="modal-body">
                 <h3>User Creation </h3>
-                <form id="registrationForm" method="post" action="register.php">
+                <form id="registrationForm" method="post" action="../auth/register.php">
                     <input type="text" placeholder="Username" name="username" required>
                     <input type="password" placeholder="Password (optional)" name="password">
                     <button type="submit">Register</button>
@@ -127,7 +127,7 @@ $is_logged_in = isset($_SESSION['username']);
             </div>
             <div class="modal-body">
                 <h3>LogIn </h3>
-                <form id="registrationForm" method="post" action="login.php">
+                <form id="registrationForm" method="post" action="../auth/login.php">
                     <input type="text" placeholder="Username" name="username" required>
                     <input type="password" placeholder="Password (optional)" name="password">
                     <button type="submit">LogIn</button>
@@ -146,7 +146,7 @@ $is_logged_in = isset($_SESSION['username']);
             </div>
             <div class="modal-body">
                 <h3>LogIn </h3>
-                <form id="registrationForm" method="post" action="login.php">
+                <form id="registrationForm" method="post" action="../auth/login.php">
                     <input type="text" placeholder="Username" name="username" required>
                     <input type="password" placeholder="Password (optional)" name="password">
                     <button type="submit">LogIn</button>
