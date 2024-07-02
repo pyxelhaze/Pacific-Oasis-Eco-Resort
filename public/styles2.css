@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Mindesthöhe des Seiteninhalts, um den Footer zu schieben */
+  position: relative; /* Relativer Positionierungs-Kontext für den Footer */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: deepskyblue;
+  color: aliceblue;
+}
+
+/* nav */
+.topnav {
+  padding: 5px 0 5px 10px;
+  display: flex;
+  overflow: hidden;
+  height: 11vh;
+  background-color: deepskyblue;
+}
+
+.topnav .headline {
+  font-size: 4em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Parisienne', cursive;
+}
+
+.topnav .headline2 {
+  font-size: 2em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Parisienne', cursive;
+  margin: 0;
+}
+
+.topnav a:not(:first-child) {
+  display: none;
+}
+
+.topnav a.icon {
+  font-size: 1.2em;
+  display: block;
+  position: absolute;
+  right: 7%;
+  top: 1.5%;
+  z-index: 1000;
+}
+
+.topnav.responsive {
+  position: relative;
+}
+
+.topnav.responsive a.icon {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+}
+
+.topnav.responsive a {
+  float: none;
+  display: block;
+  text-align: left;
+}
+
+.topnav a:hover {
+  background-color: deepskyblue;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: deepskyblue;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+.headblock {
+  display: flex;
+  flex-direction: column;
+}
+
+.resortname {
+  display: flex;
+  flex-direction: column;
+  padding-left: 5%;
+}
+
+.register_buttons {
+  display: flex;
+  align-items: end;
+  height: 100%;
+  width: 400px;
+  padding-left: 2%;
+}
+
+.register a,
+.login a,
+.logout a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.login,
+.register,
+.logout,
+.greeting {
+  font-size: 2em;
+  background-color: deepskyblue;
+  text-decoration: none;
+  color: #ffffff;
+  height: 3vh;
+  border: 1px, solid, rgba(255, 255, 255, 0);
+}
+
+.greeting {
+  width: 50%;
+}
+
+.fa-bars {
+  color: #ffffff;
+}
+
+/* booking-success */
+
+.booking-success {
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.back {
+  font-size: 1.2em;
+}

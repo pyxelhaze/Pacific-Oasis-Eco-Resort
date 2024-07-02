@@ -1,5 +1,6 @@
 <?php
 session_start();
+$is_logged_in = isset($_SESSION['username']);
 if (!isset($_SESSION['username'])) {
     header("Location: ../public/index.php");
     exit;
@@ -11,33 +12,38 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <title>Buchung Erfolgreich</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Falls du eine CSS-Datei hast -->
+    <link rel="stylesheet" href="../public/styles2.css">
 </head>
 
 <body>
-    <header>
-        <nav class="topnav" id="myTopnav">
+    <nav class="topnav" id="myTopnav">
+        <div class="headblock">
             <div class="resortname">
                 <a href="../public/index.php" class="headline">AquaVista</a>
                 <p class="headline2">Ocean Eco-Resort</p>
             </div>
-            <div class="register">
-                <ul>
-                    <li><span>Hallo, <?php echo htmlspecialchars($_SESSION['username']); ?></span></li>
-                    <li><a href="../auth/logout.php">Logout</a></li>
-                </ul>
+
+            <div class="register_buttons">
+                <?php if ($is_logged_in) : ?>
+                <button class="greeting">Hello <?php echo htmlspecialchars($_SESSION['username']); ?></button>
+                <button class="logout"> <a href="../auth/logout.php">Logout</a></button>
+                <?php else : ?>
+                <button class="register"><a href="#" data-modal-target="#modal-register">Register</a></button>
+                <button class="login"><a href="#" data-modal-target="#modal-login">Login</a></button>
+                <?php endif; ?>
             </div>
-            <a href="javascript:void(0);" class="icon standard" onclick="toggleForm()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </nav>
-    </header>
-    <main>
-        <h1>Buchung Erfolgreich!</h1>
-        <p>Vielen Dank für Ihre Buchung bei AquaVista Ocean Eco-Resort.</p>
-        <p>Wir freuen uns, Sie bald bei uns begrüßen zu dürfen.</p>
-        <a href="../public/index.php'">Zurück zur Startseite</a>
-    </main>
+        </div>
+
+    </nav>
+    <div class="booking-success">
+        <h1>Booking Successful!</h1>
+        <p>Thank you for your booking at AquaVista Ocean Eco-Resort.</p>
+        <p>We look forward to welcoming you soon.</p>
+        <a class="back" href="../public/index.php">Back to Homepage</a>
+
+    </div>
+
 </body>
+
 
 </html>

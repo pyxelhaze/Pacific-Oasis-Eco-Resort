@@ -2,7 +2,7 @@
     <nav class="topnav" id="myTopnav">
         <div class="headblock">
             <div class="resortname">
-                <a href="..public/index.php" class="headline">AquaVista</a>
+                <a href="../public/index.php" class="headline">AquaVista</a>
                 <p class="headline2">Ocean Eco-Resort</p>
             </div>
 

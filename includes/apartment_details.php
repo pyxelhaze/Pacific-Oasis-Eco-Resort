@@ -16,7 +16,7 @@ foreach ($apartments as $apartment) {
     echo '<div class="apartment_name">' . $apartment['name'] . '<br /><br /></div>';
     echo 'Bedrooms:' . $apartment['bedrooms'] . '<br /><br />';
     echo 'Price: ' . $apartment['price'] . ' € / Night<br /><br />';
-    echo '<div class="ratings">Rated by our guests';
+    echo '<div class="ratings">Rated by our guests' . '<br />';
     for ($i = 0; $i < 5; $i++) {
         echo '<span class="fa fa-star' . ($i < $apartment['rating'] ? ' checked' : '') . '"></span>';
     }
