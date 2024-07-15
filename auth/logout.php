@@ -25,7 +25,7 @@ if (isset($_SESSION['user_id'])) {
     $conn->close();
 }
 
-// Sitzung beenden und zur Startseite weiterleiten
+
 session_destroy();
 header("Location: ../public/index.php");
 exit();

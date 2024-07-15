@@ -28,6 +28,7 @@ header {
   overflow: hidden;
   height: 11vh;
   background-color: deepskyblue;
+  width: 100%;
 }
 
 .topnav .headline {
@@ -93,6 +94,7 @@ header {
 .headblock {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .resortname {
@@ -207,7 +209,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 2% 0 2% 0;
+  padding: 0;
 }
 
 .welcome {
@@ -540,6 +542,10 @@ main {
     padding: 0% 3% 2% 3%;
     font-size: 1.5em;
   }
+  .greeting {
+    font-size: 1.1em;
+    padding-right: 15%;
+  }
 
   .date1 input,
   .date2 input {
@@ -549,7 +555,9 @@ main {
   .children input {
     font-size: 1.2em;
   }
-
+  .register_buttons {
+    width: 100%;
+  }
   .apartments {
     font-size: 1.3em;
   }
@@ -564,7 +572,7 @@ main {
 @media only screen and (min-width: 991px) and (max-width: 1199px) {
   .topnav {
     padding: 1% 0 1% 2%;
-    height: 17vh;
+    height: 20%;
   }
 
   .topnav .headline {
@@ -586,13 +594,19 @@ main {
   .register a,
   .login a,
   .logout a {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
   .welcome {
     padding: 0% 3% 2% 3%;
+    font-size: 1.3em;
+  }
+  .greeting {
+    width: 100%;
     font-size: 1.2em;
   }
-
+  .register_buttons {
+    width: 50%;
+  }
   .date1 input,
   .date2 input {
     font-size: 1.5em;
@@ -601,7 +615,9 @@ main {
   .children input {
     font-size: 1.2em;
   }
-
+  main {
+    padding: 0;
+  }
   .apartments {
     font-size: 1.3em;
   }
@@ -611,5 +627,25 @@ main {
   .booknow {
     font-size: 1.2em;
     font-weight: 500;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  html {
+    display: flex;
+    justify-content: center;
+  }
+  body {
+    width: 60%;
+  }
+
+  .topnav a.icon {
+    right: 7%;
+    top: 1%;
+  }
+  .topnav {
+    height: 25%;
+  }
+  main {
+    padding: 0;
   }
 }

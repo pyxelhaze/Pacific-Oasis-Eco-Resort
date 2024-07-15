@@ -11,25 +11,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
 
-    // check connection
+
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Passwort-Hash erstellen (wenn ein Passwort angegeben wurde)
+
     $passwordHash = NULL;
     if (!empty($password)) {
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
     }
 
-    // SQL-Befehl zum Einfügen der Benutzerdaten
+
     $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
 
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ss", $username, $passwordHash);
 
     if ($stmt->execute()) {
-        // Nach erfolgreicher Registrierung zur index.php weiterleiten
+
         header('Location: ../public/index.php');
         exit();
     } else {
